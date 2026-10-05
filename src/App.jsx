@@ -70,10 +70,10 @@ function Header({ savedCount, onOpenWatchlist }) {
         <span>Reel Index</span>
       </Link>
       <nav className="header-nav" aria-label="Main navigation">
-        <a className="nav-link active" href="/#discover">
+        <a className="nav-link active" href={`${import.meta.env.BASE_URL}#discover`}>
           Discover
         </a>
-        <a className="nav-link" href="/#library">
+        <a className="nav-link" href={`${import.meta.env.BASE_URL}#library`}>
           The library
         </a>
       </nav>
