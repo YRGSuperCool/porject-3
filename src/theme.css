@@ -1,0 +1,775 @@
+:root {
+  font-family: "Space Grotesk", sans-serif;
+  color: #171918;
+  background: #f4f4ef;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  --paper: #f4f4ef;
+  --ink: #171918;
+  --muted: #727873;
+  --line: #d8dad2;
+  --green: #d8f35b;
+  --accent: #fa593e;
+  --mono: "DM Mono", monospace;
+  --display: "Bebas Neue", Impact, sans-serif;
+  --wordmark: "Space Grotesk", sans-serif;
+}
+
+body {
+  background: var(--paper);
+}
+
+button,
+input,
+select {
+  font-family: inherit;
+}
+
+.site-header {
+  position: relative;
+  z-index: 2;
+  height: 78px;
+  padding: 0 clamp(20px, 7vw, 112px);
+  border-bottom: 1px solid #d5d7cf;
+  background: var(--paper);
+}
+
+.brand {
+  gap: 11px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.brand-mark {
+  width: 36px;
+  height: 36px;
+  background: var(--accent);
+  color: var(--ink);
+  transform: rotate(-5deg);
+}
+
+.header-nav {
+  gap: 32px;
+}
+
+.nav-link {
+  color: #727873;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.nav-link.active::after {
+  height: 3px;
+  background: var(--accent);
+}
+
+.saved-link {
+  gap: 9px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.saved-count {
+  width: 23px;
+  height: 23px;
+  border-radius: 0;
+  background: var(--green);
+  color: var(--ink);
+  font: 11px var(--mono);
+}
+
+.spotlight-section {
+  min-height: 540px;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.77fr);
+  gap: clamp(32px, 8vw, 120px);
+  padding: 66px clamp(24px, 11vw, 170px) 76px;
+  background-color: #171918;
+  background-image: repeating-linear-gradient(
+    0deg,
+    transparent 0 71px,
+    rgb(255 255 255 / 3%) 72px
+  );
+}
+
+.spotlight-section::after {
+  content: "01";
+  position: absolute;
+  right: 3%;
+  bottom: -0.31em;
+  color: rgb(255 255 255 / 3%);
+  font: 32vw/1 var(--display);
+  pointer-events: none;
+}
+
+.spotlight-copy {
+  z-index: 1;
+  max-width: 620px;
+}
+
+.spotlight-copy::before {
+  content: "THE WEEKLY CUT / ISSUE 01";
+  display: block;
+  color: var(--green);
+  font: 10px var(--mono);
+  letter-spacing: 0;
+}
+
+.spotlight-copy h1 {
+  max-width: 8ch;
+  margin: 22px 0 16px;
+  font: 400 clamp(74px, 9vw, 132px)/0.79 var(--display);
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.spotlight-copy h1 em {
+  color: var(--accent);
+  font-style: normal;
+}
+
+.spotlight-description {
+  max-width: 34ch;
+  margin-top: 25px;
+  color: #b7bdb7;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.featured-caption {
+  position: relative;
+  gap: 5px;
+  margin-top: 27px;
+  padding: 3px 0 3px 14px;
+  border-left: 3px solid var(--green);
+}
+
+.featured-caption strong {
+  font:
+    500 20px "Space Grotesk",
+    sans-serif;
+}
+
+.featured-caption > span:last-of-type {
+  color: #a2aaa3;
+  font: 10px var(--mono);
+  text-transform: uppercase;
+}
+
+.featured-link {
+  margin-top: 8px;
+  color: var(--green);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.featured-link:hover,
+.featured-link:focus-visible {
+  color: var(--accent);
+}
+
+.spotlight-visual {
+  z-index: 1;
+  width: 100%;
+  height: auto;
+  min-height: 360px;
+  aspect-ratio: 0.82;
+  border: 1px solid rgb(255 255 255 / 28%);
+  background: #303531;
+  box-shadow: 16px 16px 0 var(--accent);
+  transform: rotate(2deg);
+}
+
+.spotlight-poster {
+  filter: saturate(0.8) contrast(1.05);
+}
+
+.spotlight-placeholder {
+  color: var(--green);
+  background: #303531;
+}
+
+.library-section {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 75px clamp(24px, 11vw, 170px) 105px;
+}
+
+.section-heading {
+  align-items: end;
+  margin-bottom: 26px;
+}
+
+.section-heading > div::before {
+  content: "PICK YOUR NEXT SCREENING";
+  color: #848b84;
+  font: 9px var(--mono);
+}
+
+.section-heading h2 {
+  margin: 5px 0 0;
+  font: 400 54px/0.95 var(--display);
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.collection-count {
+  padding: 0 0 6px;
+  color: #727873;
+  font: 10px var(--mono);
+  text-transform: uppercase;
+}
+
+.search-row {
+  gap: 8px;
+}
+
+.search-box {
+  height: 56px;
+  gap: 13px;
+  padding: 0 17px;
+  border: 1px solid #c4c8c0;
+  background: #fff;
+  color: #606761;
+}
+
+.search-box:focus-within {
+  border-color: var(--ink);
+  box-shadow: 4px 4px 0 var(--green);
+}
+
+.search-box input {
+  font-size: 13px;
+}
+
+.search-box input::placeholder {
+  color: #8b918b;
+}
+
+.filter-select {
+  height: 56px;
+  gap: 9px;
+  padding: 0 15px;
+  border-color: #c4c8c0;
+  color: #606761;
+}
+
+.filter-select select {
+  max-width: 130px;
+  color: var(--ink);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.sort-select select {
+  max-width: 110px;
+}
+
+.catalog-bar {
+  height: 51px;
+  margin: 0 0 18px;
+  border-bottom: 1px solid #cfd2ca;
+  color: #858b85;
+}
+
+.text-filter {
+  color: var(--ink);
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.text-filter.filter-active {
+  color: #c53b27;
+}
+
+.api-search-status {
+  color: #777e77;
+  font: 9px var(--mono);
+}
+
+.movie-grid {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  column-gap: clamp(12px, 2vw, 27px);
+  row-gap: 38px;
+}
+
+.movie-card {
+  min-width: 0;
+}
+
+.poster-link {
+  background: #dfe2d9;
+  outline: 1px solid transparent;
+  outline-offset: 4px;
+  transition: outline-color 180ms ease;
+}
+
+.movie-card:hover .poster-link,
+.poster-link:focus-visible {
+  outline-color: var(--accent);
+}
+
+.movie-poster {
+  filter: saturate(0.86);
+  transition:
+    transform 350ms cubic-bezier(0.2, 0.7, 0.2, 1),
+    filter 350ms ease;
+}
+
+.poster-link:hover .movie-poster {
+  filter: saturate(1.08);
+  transform: scale(1.04);
+}
+
+.poster-placeholder {
+  color: #5c655d;
+  background: repeating-linear-gradient(
+    135deg,
+    #e4e7dc 0 10px,
+    #d8ddd1 10px 20px
+  );
+}
+
+.movie-meta {
+  padding-top: 12px;
+}
+
+.movie-title-line {
+  align-items: center;
+}
+
+.movie-title {
+  font:
+    600 13px/1.35 "Space Grotesk",
+    sans-serif;
+}
+
+.save-button {
+  width: 27px;
+  height: 27px;
+  margin: -3px -4px 0 0;
+  color: #717771;
+}
+
+.save-button:hover,
+.save-button.is-saved {
+  color: #d64731;
+}
+
+.movie-subtitle {
+  gap: 7px;
+  margin-top: 4px;
+  color: #777e77;
+  font: 9px var(--mono);
+  text-transform: uppercase;
+}
+
+.meta-dot {
+  color: var(--accent);
+}
+
+.status-panel {
+  min-height: 230px;
+  color: #747c75;
+}
+
+.status-panel p {
+  color: var(--ink);
+  font:
+    500 17px "Space Grotesk",
+    sans-serif;
+}
+
+.status-panel > span {
+  font-size: 12px;
+}
+
+.loader {
+  width: 32px;
+  height: 32px;
+  border: 2px solid #d8ddd4;
+  border-top-color: var(--accent);
+}
+
+.reset-button {
+  padding: 11px 15px;
+  border: 1px solid var(--ink);
+  background: var(--ink);
+  color: white;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.site-footer {
+  min-height: 77px;
+  padding: 0 clamp(20px, 7vw, 112px);
+  border-top: 1px solid #d5d7cf;
+  color: #747b75;
+  font-size: 10px;
+}
+
+.footer-brand {
+  font-weight: 700;
+}
+
+.footer-brand span {
+  color: #8c938d;
+}
+
+.site-footer > a:last-child {
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.detail-main {
+  min-height: calc(100vh - 155px);
+  padding: 38px clamp(24px, 11vw, 170px) 90px;
+}
+
+.back-link {
+  color: #5d655f;
+  font: 10px var(--mono);
+}
+
+.detail-layout {
+  max-width: 1060px;
+  grid-template-columns: minmax(230px, 37%) 1fr;
+  gap: clamp(40px, 9vw, 130px);
+  margin-top: 40px;
+}
+
+.detail-poster-wrap {
+  max-width: 380px;
+  box-shadow: 12px 12px 0 var(--green);
+}
+
+.detail-copy .eyebrow {
+  color: #777f78;
+  font: 10px var(--mono);
+  text-transform: uppercase;
+}
+
+.detail-copy h1 {
+  margin: 18px 0 14px;
+  font: 400 clamp(58px, 7vw, 94px)/0.88 var(--display);
+  text-transform: uppercase;
+}
+
+.detail-facts {
+  gap: 10px;
+  color: #707871;
+  font: 10px var(--mono);
+  text-transform: uppercase;
+}
+
+.detail-divider {
+  margin: 28px 0 19px;
+  background: #d4d7cf;
+}
+
+.detail-description {
+  max-width: 52ch;
+  color: #545b56;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.detail-credit {
+  color: #777e77;
+  font: 10px var(--mono);
+}
+
+.detail-actions {
+  gap: 9px;
+  margin-top: 27px;
+}
+
+.watchlist-button,
+.imdb-link {
+  min-height: 45px;
+  padding: 0 16px;
+  border: 1px solid var(--ink);
+  border-radius: 0;
+  background: var(--ink);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.watchlist-button.is-saved {
+  border-color: var(--green);
+  background: var(--green);
+  color: var(--ink);
+}
+
+.imdb-link {
+  background: transparent;
+  color: var(--ink);
+}
+
+.detail-index {
+  margin-top: 50px;
+  border-color: #d4d7cf;
+  color: #707871;
+  font: 9px var(--mono);
+  text-transform: uppercase;
+}
+
+button,
+a,
+select {
+  transition:
+    color 160ms ease,
+    background-color 160ms ease,
+    border-color 160ms ease;
+}
+
+button:focus-visible,
+a:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+@media (min-width: 1500px) {
+  .spotlight-section {
+    padding-left: max(11vw, calc((100% - 1230px) / 2));
+    padding-right: max(11vw, calc((100% - 1230px) / 2));
+  }
+}
+
+@media (max-width: 900px) {
+  .site-header {
+    padding-right: 5%;
+    padding-left: 5%;
+  }
+
+  .spotlight-section {
+    min-height: 470px;
+    padding: 55px 8%;
+  }
+
+  .spotlight-copy h1 {
+    font-size: clamp(68px, 10vw, 100px);
+  }
+
+  .spotlight-visual {
+    min-height: 310px;
+  }
+
+  .library-section {
+    padding-right: 8%;
+    padding-left: 8%;
+  }
+
+  .movie-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .detail-main {
+    padding-right: 8%;
+    padding-left: 8%;
+  }
+}
+
+@media (max-width: 620px) {
+  .site-header {
+    height: 64px;
+    padding: 0 18px;
+  }
+
+  .brand {
+    font-size: 14px;
+  }
+
+  .brand-mark {
+    width: 31px;
+    height: 31px;
+  }
+
+  .saved-link {
+    font-size: 9px;
+  }
+
+  .saved-count {
+    width: 21px;
+    height: 21px;
+  }
+
+  .spotlight-section {
+    grid-template-columns: minmax(0, 1fr) minmax(112px, 0.72fr);
+    align-items: center;
+    gap: 14px;
+    padding: 38px 20px 47px;
+  }
+
+  .spotlight-section::after {
+    right: -4%;
+    bottom: -0.22em;
+    font-size: 58vw;
+  }
+
+  .spotlight-copy::before {
+    font-size: 8px;
+  }
+
+  .spotlight-copy h1 {
+    margin: 19px 0 12px;
+    font-size: clamp(49px, 13vw, 72px);
+    line-height: 0.84;
+  }
+
+  .spotlight-description {
+    margin-top: 17px;
+    font-size: 10px;
+  }
+
+  .featured-caption {
+    margin-top: 18px;
+    padding-left: 9px;
+  }
+
+  .featured-caption strong {
+    font-size: 13px;
+  }
+
+  .featured-caption > span:last-of-type {
+    font-size: 8px;
+  }
+
+  .featured-link {
+    font-size: 9px;
+  }
+
+  .spotlight-visual {
+    min-height: 0;
+    margin-top: 9px;
+    box-shadow: 8px 8px 0 var(--accent);
+  }
+
+  .library-section {
+    padding: 52px 20px 72px;
+  }
+
+  .section-heading h2 {
+    font-size: 43px;
+  }
+
+  .collection-count {
+    max-width: 100px;
+    font-size: 8px;
+    text-align: right;
+  }
+
+  .search-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 7px;
+  }
+
+  .search-box {
+    grid-column: 1 / -1;
+    height: 50px;
+  }
+
+  .filter-select {
+    height: 45px;
+    gap: 6px;
+    padding: 0 9px;
+  }
+
+  .filter-select select,
+  .sort-select select {
+    min-width: 0;
+    max-width: none;
+    flex: 1;
+    font-size: 9px;
+  }
+
+  .catalog-bar {
+    margin-top: 2px;
+  }
+
+  .api-search-status {
+    max-width: 62%;
+    font-size: 8px;
+  }
+
+  .movie-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 27px 13px;
+  }
+
+  .movie-title {
+    font-size: 11px;
+  }
+
+  .movie-subtitle {
+    font-size: 8px;
+  }
+
+  .site-footer {
+    min-height: 80px;
+    padding: 14px 20px;
+    flex-wrap: wrap;
+    gap: 9px 12px;
+    font-size: 9px;
+  }
+
+  .footer-note {
+    order: 3;
+    flex-basis: 100%;
+  }
+
+  .detail-main {
+    padding: 26px 22px 60px;
+  }
+
+  .detail-layout {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 30px;
+    margin-top: 25px;
+  }
+
+  .detail-poster-wrap {
+    width: min(100%, 290px);
+    align-self: center;
+  }
+
+  .detail-copy h1 {
+    font-size: 64px;
+  }
+
+  .detail-description {
+    font-size: 13px;
+  }
+
+  .detail-index {
+    margin-top: 35px;
+    font-size: 8px;
+  }
+}
+
+@media (max-width: 360px) {
+  .spotlight-section {
+    grid-template-columns: minmax(0, 1fr) 100px;
+    gap: 10px;
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .spotlight-copy h1 {
+    font-size: 47px;
+  }
+
+  .spotlight-visual {
+    box-shadow: 6px 6px 0 var(--accent);
+  }
+}
